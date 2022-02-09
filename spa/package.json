@@ -12,7 +12,7 @@
     "test": "del-cli out && tsc --noEmit && eslint --ext .ts --ext .tsx --max-warnings=0 src && jest",
     "start": "webpack serve",
     "prepare": "del-cli dist && webpack build",
-    "modernize": "npm-check-updates -u && npm i"
+    "modernize": "npm-check-updates -u && yon i"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.0",
@@ -47,7 +47,8 @@
     "webpack": "^5.68.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "yarn-or-npm": "^3.0.1"
   },
   "dependencies": {
     "core-js": "^3.21.0",

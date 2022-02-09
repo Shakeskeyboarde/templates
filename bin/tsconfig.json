@@ -4,6 +4,7 @@
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "sourceMap": true,
+    "declaration": true,
     "types": ["node", "jest"],
     "rootDir": "src",
     "outDir": "lib"

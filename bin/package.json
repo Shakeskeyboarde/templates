@@ -7,12 +7,14 @@
   },
   "license": "ISC",
   "version": "1.0.0",
-  "bin": "lib/index.js",
+  "bin": "lib/bin.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --max-warnings=0 src && jest",
-    "start": "node lib/index.js",
     "prepare": "del-cli lib && tsc && chmodx --package",
-    "modernize": "npm-check-updates -u && npm i"
+    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --max-warnings=0 src && jest",
+    "start": "yon run prepare && node lib/bin.js",
+    "modernize": "npm-check-updates -u -x @types/node && yon i"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
@@ -29,10 +31,9 @@
     "jest": "^27.5.1",
     "npm-check-updates": "^12.3.0",
     "prettier": "^2.5.1",
+    "source-map-support": "^0.5.21",
     "ts-jest": "^27.1.3",
-    "typescript": "^4.5.5"
-  },
-  "dependencies": {
-    "source-map-support": "^0.5.21"
+    "typescript": "^4.5.5",
+    "yarn-or-npm": "^3.0.1"
   }
 }
