@@ -4,14 +4,16 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 /** @return {import('webpack').Configuration} */
 module.exports = (env, argv) => {
-  argv.mode = argv.mode || (env.WEBPACK_SERVE ? 'development' : 'production');
+  const isBuild = Boolean(env.WEBPACK_BUILD);
+  const isProduction = argv.mode === 'production' || (!argv.mode && isBuild);
+  const outputRoot = `${__dirname}/dist`;
 
   return {
-    mode: argv.mode,
+    mode: isProduction ? 'production' : 'development',
     target: 'web',
     entry: './src/index.tsx',
     output: {
-      path: `${__dirname}/dist`,
+      path: `${outputRoot}/${isProduction ? 'production' : 'development'}`,
       filename: 'bundle/[name].[chunkhash:8].js',
       assetModuleFilename: 'bundle/[name].[contenthash:8].[ext]',
       publicPath: 'auto',
@@ -43,22 +45,13 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      new HtmlPlugin({
-        template: './src/index.html',
-        favicon: './src/favicon.png',
+      new HtmlPlugin({ template: './src/index.html', favicon: './src/favicon.png' }),
+      new CopyPlugin({ patterns: [{ context: 'public', from: '**', noErrorOnMissing: true }] }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: isBuild && isProduction ? 'static' : 'disabled',
+        openAnalyzer: false,
+        reportFilename: `${outputRoot}/report.html`,
       }),
-      new CopyPlugin({
-        patterns: [{ context: 'public', from: '**', noErrorOnMissing: true }],
-      }),
-      (compiler) => {
-        if (env.WEBPACK_BUILD && argv.mode === 'production') {
-          new BundleAnalyzerPlugin({
-            reportFilename: `${__dirname}/out/bundle-analyzer.html`,
-            analyzerMode: 'static',
-            openAnalyzer: false,
-          }).apply(compiler);
-        }
-      },
     ],
     devServer: {
       allowedHosts: 'all',

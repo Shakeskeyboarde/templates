@@ -12,6 +12,7 @@
     "test": "del-cli out && tsc --noEmit && eslint --ext .ts --ext .tsx --max-warnings=0 src && jest",
     "start": "webpack serve",
     "prepare": "del-cli dist && webpack build",
+    "clean": "del-cli dist out",
     "modernize": "npm-check-updates -u && yon i"
   },
   "devDependencies": {
