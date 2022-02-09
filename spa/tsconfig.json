@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2021",
     "module": "ESNext",
     "moduleResolution": "node",
     "strict": true,
@@ -12,7 +12,8 @@
     "importHelpers": true,
     "sourceMap": true,
     "types": ["jest"],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowJs": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
