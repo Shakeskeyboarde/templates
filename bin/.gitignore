@@ -1,5 +1,9 @@
 .vscode
 node_modules
+lib
+out
+dist
 
 .DS_Store
-package-lock.json
+.env*
+*.log

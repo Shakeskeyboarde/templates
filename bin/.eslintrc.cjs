@@ -3,21 +3,19 @@ module.exports = {
   root: true,
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['*.ts'],
       parserOptions: { project: './tsconfig.json', tsconfigRootDir: __dirname },
       settings: { react: { version: 'latest' } },
       extends: [
         'eslint:recommended',
         'plugin:promise/recommended',
         'airbnb',
-        'airbnb/hooks',
         'airbnb-typescript',
-        'plugin:react/jsx-runtime',
         'plugin:jest/recommended',
-        'plugin:testing-library/react',
         'plugin:prettier/recommended',
       ],
       rules: {
+        'no-console': 'off',
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off',
       },
