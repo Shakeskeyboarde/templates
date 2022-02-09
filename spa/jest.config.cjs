@@ -5,7 +5,7 @@
 
 /** @type {import('@jest/types').Config.InitialOptions} */
 module.exports = {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/js-with-babel',
   roots: ['<rootDir>/src'],
   verbose: true,
   bail: 0,
@@ -17,4 +17,5 @@ module.exports = {
   coverageProvider: 'v8',
   coverageReporters: ['text-summary', 'html-spa'],
   coverageThreshold: { global: { branches: 50, functions: 50, lines: 50, statements: 50 } },
+  transformIgnorePatterns: [],
 };

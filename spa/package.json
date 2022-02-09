@@ -10,8 +10,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "del-cli out && tsc --noEmit && eslint --ext .ts --ext .tsx --max-warnings=0 src && jest",
-    "start": "webpack serve",
     "prepare": "del-cli dist && webpack build",
+    "start": "webpack serve",
     "clean": "del-cli dist out",
     "modernize": "npm-check-updates -u && yon i"
   },
