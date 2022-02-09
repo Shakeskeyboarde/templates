@@ -7,12 +7,17 @@
   },
   "license": "ISC",
   "version": "1.0.0",
-  "bin": "lib/bin.js",
-  "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "exports": {
+    "types": "./lib/index.d.ts",
+    "default": "./lib/index.js"
+  },
+  "bin": "lib/bin.js",
+  "sideEffects": false,
   "scripts": {
-    "prepare": "del-cli lib && tsc && chmodx --package",
     "test": "del-cli out && tsc --noEmit && eslint --ext .ts --max-warnings=0 src && jest",
+    "prepare": "del-cli lib && tsc && chmodx --package",
     "start": "yon run prepare && node lib/bin.js",
     "clean": "del-cli lib out",
     "modernize": "npm-check-updates -u -x @types/node && yon i"
