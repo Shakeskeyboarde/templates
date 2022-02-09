@@ -8,9 +8,9 @@ module.exports = {
       settings: { react: { version: 'latest' } },
       extends: [
         'eslint:recommended',
-        'plugin:promise/recommended',
         'airbnb',
         'airbnb-typescript',
+        'plugin:promise/recommended',
         'plugin:jest/recommended',
         'plugin:prettier/recommended',
       ],
