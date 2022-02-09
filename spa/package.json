@@ -1,14 +1,18 @@
 {
   "name": "{{{&target}}}",
   "description": "{{{Description}}}",
-  "author": "{{{Author}}}",
+  "author": {
+    "name": "{{{&name}}}",
+    "email": "{{{&email}}}"
+  },
   "license": "ISC",
   "version": "1.0.0",
   "main": "lib/index.js",
   "scripts": {
     "test": "del-cli out && tsc --noEmit && jest",
     "start": "webpack serve",
-    "prepare": "del-cli dist && webpack build"
+    "prepare": "del-cli dist && webpack build",
+    "modernize": "npm-check-updates -u && npm i"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.0",
@@ -35,7 +39,8 @@
     "eslint-plugin-testing-library": "^5.0.5",
     "eslint-plugin-unicorn": "^40.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.5.0",
+    "jest": "^27.5.1",
+    "npm-check-updates": "^12.3.0",
     "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
     "ts-jest": "^27.1.3",

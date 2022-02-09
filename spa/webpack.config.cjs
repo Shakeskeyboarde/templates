@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
   return {
     mode: argv.mode,
     target: 'web',
-    entry: 'src/index.tsx',
+    entry: './src/index.tsx',
     output: {
       path: `${__dirname}/dist`,
       filename: 'bundle/[name].[chunkhash:8].js',
@@ -44,8 +44,8 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlPlugin({
-        template: 'src/index.html',
-        favicon: 'src/favicon.png',
+        template: './src/index.html',
+        favicon: './src/favicon.png',
       }),
       new CopyPlugin({
         patterns: [{ context: 'public', from: '**', noErrorOnMissing: true }],
