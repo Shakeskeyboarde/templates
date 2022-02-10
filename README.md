@@ -1,3 +1,3 @@
 # Templates
 
-Templates for the [https://www.npmjs.com/package/mknew] tool.
+Templates for the [mknew](https://github.com/Shakeskeyboarde/mknew) tool.
