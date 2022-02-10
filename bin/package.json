@@ -23,7 +23,7 @@
     "modernize": "npm-check-updates -u -x @types/node && yon i"
   },
   "devDependencies": {
-    "@tsconfig/node16": "^1.0.2",
+    "@types/jest": "^27.4.0",
     "@types/node": "^16.11.22",
     "chmodx": "^1.0.0",
     "del-cli": "^4.0.1",
