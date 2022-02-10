@@ -10,6 +10,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "importsNotUsedAsValues": "error",
+    "preserveValueImports": true,
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
     "importHelpers": true,

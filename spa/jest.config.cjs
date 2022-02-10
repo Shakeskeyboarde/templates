@@ -12,6 +12,7 @@ module.exports = {
   bail: 0,
   clearMocks: true,
   testEnvironment: 'jsdom',
+  moduleNameMapper: { '\\.css$': 'identity-obj-proxy' },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
   coverageDirectory: 'out/coverage',
