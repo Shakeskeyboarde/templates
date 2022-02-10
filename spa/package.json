@@ -9,7 +9,7 @@
   "version": "1.0.0",
   "main": "package.json",
   "scripts": {
-    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --ext .tsx --max-warnings=0 src && jest",
+    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --ext .tsx --max-warnings=0 src && jest --no-cache",
     "prepare": "del-cli dist && webpack build",
     "start": "webpack serve",
     "clean": "del-cli dist out",
