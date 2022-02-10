@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "module": "ESNext",
     "moduleResolution": "node",
+    "module": "ES2020",
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "types": [],
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
     "importHelpers": true,
     "sourceMap": true,
-    "types": ["jest"],
     "jsx": "react-jsx",
     "allowJs": true
   },
