@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
         {
           test: /\.(tsx?|jsx?)$/i,
           exclude: [/node_modules/],
-          use: 'ts-loader',
+          use: { loader: 'ts-loader', options: { configFile: 'tsconfig.build-webpack.json' } },
         },
         {
           test: /\.css$/i,
