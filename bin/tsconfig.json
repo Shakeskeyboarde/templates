@@ -12,10 +12,17 @@
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
+    "useDefineForClassFields": true,
     "sourceMap": true,
     "declaration": true,
+    "importsNotUsedAsValues": "remove",
+    "preserveValueImports": false,
+    "importHelpers": false,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "noEmit": true,
     "rootDir": "src",
     "outDir": "lib"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
