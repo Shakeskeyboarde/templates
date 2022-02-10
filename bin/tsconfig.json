@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "module": "ES2020",
+    "module": "commonjs",
     "target": "ES2021",
     "lib": ["ES2021"],
     "types": ["node"],
@@ -13,7 +13,9 @@
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "lib"
   },
   "include": ["src/**/*.ts"]
 }
