@@ -10,14 +10,19 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "importsNotUsedAsValues": "error",
-    "preserveValueImports": true,
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
-    "importHelpers": true,
+    "useDefineForClassFields": true,
     "sourceMap": true,
+    "declaration": true,
+    "importsNotUsedAsValues": "error",
+    "preserveValueImports": true,
+    "importHelpers": true,
     "jsx": "react-jsx",
-    "allowJs": true
+    "allowJs": true,
+    "noEmit": false,
+    "rootDir": "src",
+    "outDir": "lib"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
