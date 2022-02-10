@@ -16,7 +16,7 @@
   "bin": "lib/bin.js",
   "sideEffects": false,
   "scripts": {
-    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --max-warnings=0 src && jest",
+    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --max-warnings=0 src && jest --no-cache",
     "prepare": "del-cli lib && tsc && chmodx --package",
     "start": "yon run prepare && node lib/bin.js",
     "clean": "del-cli lib out",

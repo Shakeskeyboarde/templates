@@ -16,7 +16,7 @@ module.exports = {
         'no-console': 'off',
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off',
-        'import/extensions': ['error', 'never'],
+        'import/extensions': ['error', 'never', { json: 'always' }],
       },
       extends: [
         'eslint:recommended',

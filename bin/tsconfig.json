@@ -20,7 +20,7 @@
     "importHelpers": false,
     "jsx": "react-jsx",
     "allowJs": true,
-    "noEmit": true,
+    "noEmit": false,
     "rootDir": "src",
     "outDir": "lib"
   },

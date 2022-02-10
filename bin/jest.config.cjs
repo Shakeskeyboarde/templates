@@ -5,7 +5,7 @@
 
 /** @type {import('@jest/types').Config.InitialOptions} */
 module.exports = {
-  preset: 'ts-jest/presets/js-with-ts',
+  preset: 'ts-jest',
   // transformIgnorePatterns: [],
   roots: ['<rootDir>/src'],
   verbose: true,
