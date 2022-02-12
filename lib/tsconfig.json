@@ -1,3 +1,4 @@
+// Modern code (to be polyfilled) and explicit ambient types.
 {
   "compilerOptions": {
     "moduleResolution": "node",

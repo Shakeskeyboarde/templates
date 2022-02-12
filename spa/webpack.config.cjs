@@ -1,6 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /** @return {import('webpack').Configuration} */
 module.exports = (env, argv) => {
@@ -25,20 +25,28 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.[tj]sx?$/i,
+          // Make a best attempt to downlevel and polyfill absolutely ANY
+          // script (including node_modules) to something that can be run in
+          // the browser.
+          test: /\.(tsx?|jsx?)$/i,
           exclude: [/node_modules[\\/]webpack[\\/]buildin/, /node_modules[\\/]core-js/],
           use: 'babel-loader',
         },
         {
-          test: /\.(tsx?|jsx?)$/i,
+          // TypeScript > JavaScript
+          test: /\.tsx?$/i,
           exclude: [/node_modules/],
           use: { loader: 'ts-loader', options: { configFile: 'tsconfig.build-webpack.json' } },
         },
         {
+          // Allow CSS for backwards compatibility, but prefer CSS-in-JS for
+          // anything complex.
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
         {
+          // Prefer separate resource files to take advantage of lazy loading,
+          // parallelism, caching, and to optimize transfer size.
           test: /\.(gif|jpe?g|png|apng|svg|webp|bmp|ico|woff2?|otf|ttf)$/,
           type: 'asset/resource',
         },
