@@ -3,17 +3,17 @@ module.exports = {
   compact: false,
   env: {
     test: {
-      targets: { node: 'current' },
       presets: [['@babel/preset-env', { modules: 'commonjs' }]],
+      targets: { node: 'current' },
     },
   },
   presets: [
     [
       '@babel/preset-env',
       {
-        useBuiltIns: 'entry',
-        corejs: { version: require('core-js/package.json').version, proposals: true },
+        corejs: { proposals: true, version: require('core-js/package.json').version },
         modules: false,
+        useBuiltIns: 'entry',
       },
     ],
   ],

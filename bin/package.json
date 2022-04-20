@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "{{{&target}}}",
   "description": "{{{Description}}}",
   "author": {
@@ -16,31 +17,25 @@
   "bin": "lib/bin.js",
   "sideEffects": false,
   "scripts": {
-    "test": "del-cli out && tsc --noEmit && eslint --ext .ts --max-warnings=0 src && jest --no-cache",
+    "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache",
     "prepare": "del-cli lib && tsc && chmodx --package",
     "start": "yon run prepare && node lib/bin.js",
     "clean": "del-cli lib out",
     "modernize": "npm-check-updates -u -x @types/node && yon i"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^27.4.1",
     "@types/node": "^16.11.22",
     "chmodx": "^1.0.0",
     "del-cli": "^4.0.1",
-    "eslint": "^8.8.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^16.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jest": "^26.1.0",
-    "eslint-plugin-only-warn": "^1.0.3",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint": "^8.13.0",
+    "eslint-config-rational": "^0.1.6",
     "jest": "^27.5.1",
-    "npm-check-updates": "^12.3.0",
-    "prettier": "^2.5.1",
+    "npm-check-updates": "^12.5.9",
+    "prettier": "^2.6.2",
     "source-map-support": "^0.5.21",
-    "ts-jest": "^27.1.3",
-    "typescript": "^4.5.5",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3",
     "yarn-or-npm": "^3.0.1"
   }
 }

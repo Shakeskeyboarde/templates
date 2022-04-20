@@ -1,4 +1,4 @@
-export function usage(): void {
+const usage = (): void => {
   console.log(
     // eslint-disable-next-line prefer-template
     `
@@ -13,4 +13,6 @@ Options:
   --help     Display this help text
     `.trim() + '\n',
   );
-}
+};
+
+export { usage };

@@ -1,4 +1,3 @@
-/// <reference types="jest" />
 import {} from '.';
 
 jest.mock('react-dom', () => ({

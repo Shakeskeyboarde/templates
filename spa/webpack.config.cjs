@@ -3,39 +3,39 @@ const HtmlPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /** @return {import('webpack').Configuration} */
-module.exports = (env, argv) => {
-  const isBuild = Boolean(env.WEBPACK_BUILD);
+module.exports = (environment, argv) => {
+  const isBuild = Boolean(environment.WEBPACK_BUILD);
   const isProduction = argv.mode === 'production' || (!argv.mode && isBuild);
   const outputRoot = `${__dirname}/dist`;
 
   return {
-    mode: isProduction ? 'production' : 'development',
-    target: 'web',
-    entry: './src/index.tsx',
-    output: {
-      path: `${outputRoot}/${isProduction ? 'production' : 'development'}`,
-      filename: 'bundle/[name].[chunkhash:8].js',
-      assetModuleFilename: 'bundle/[name].[contenthash:8].[ext]',
-      publicPath: 'auto',
+    devServer: {
+      allowedHosts: 'all',
+      client: { overlay: { errors: true, warnings: false } },
+      compress: true,
+      historyApiFallback: true,
+      host: '0.0.0.0',
+      hot: false,
+      port: 8080,
+      static: 'public',
     },
-    stats: { all: false, chunks: true, errors: true, warnings: true },
-    performance: { hints: false },
-    devtool: env.WEBPACK_SERVE ? 'inline-source-map' : 'source-map',
-    resolve: { extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.wasm'] },
+    devtool: environment.WEBPACK_SERVE ? 'inline-source-map' : 'source-map',
+    entry: './src/index.tsx',
+    mode: isProduction ? 'production' : 'development',
     module: {
       rules: [
         {
+          exclude: [/node_modules[\\/]webpack[\\/]buildin/, /node_modules[\\/]core-js/],
           // Make a best attempt to downlevel and polyfill absolutely ANY
           // script (including node_modules) to something that can be run in
           // the browser.
           test: /\.(tsx?|jsx?)$/i,
-          exclude: [/node_modules[\\/]webpack[\\/]buildin/, /node_modules[\\/]core-js/],
           use: 'babel-loader',
         },
         {
+          exclude: [/node_modules/],
           // TypeScript > JavaScript
           test: /\.tsx?$/i,
-          exclude: [/node_modules/],
           use: { loader: 'ts-loader', options: { configFile: 'tsconfig.build-webpack.json' } },
         },
         {
@@ -52,8 +52,15 @@ module.exports = (env, argv) => {
         },
       ],
     },
+    output: {
+      assetModuleFilename: 'bundle/[name].[contenthash:8].[ext]',
+      filename: 'bundle/[name].[chunkhash:8].js',
+      path: `${outputRoot}/${isProduction ? 'production' : 'development'}`,
+      publicPath: 'auto',
+    },
+    performance: { hints: false },
     plugins: [
-      new HtmlPlugin({ template: './src/index.html', favicon: './src/favicon.png' }),
+      new HtmlPlugin({ favicon: './src/favicon.png', template: './src/index.html' }),
       new CopyPlugin({ patterns: [{ context: 'public', from: '**', noErrorOnMissing: true }] }),
       new BundleAnalyzerPlugin({
         analyzerMode: isBuild && isProduction ? 'static' : 'disabled',
@@ -61,15 +68,8 @@ module.exports = (env, argv) => {
         reportFilename: `${outputRoot}/report.html`,
       }),
     ],
-    devServer: {
-      allowedHosts: 'all',
-      client: { overlay: { errors: true, warnings: false } },
-      compress: true,
-      historyApiFallback: true,
-      host: '0.0.0.0',
-      hot: false,
-      port: 8080,
-      static: 'public',
-    },
+    resolve: { extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.wasm'] },
+    stats: { all: false, chunks: true, errors: true, warnings: true },
+    target: 'web',
   };
 };

@@ -1,3 +1,4 @@
+/* eslint-disable import/group-exports */
 declare module 'core-js/stable' {
   export {};
 }

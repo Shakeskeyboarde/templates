@@ -5,7 +5,7 @@
     "module": "commonjs",
     "target": "ES2021",
     "lib": ["ES2021"],
-    "types": ["node"],
+    "types": ["jest", "node"],
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
