@@ -1,10 +1,10 @@
 {
   "private": true,
-  "name": "{{{&target}}}",
+  "name": "~~~target.basename~~~",
   "description": "{{{Description}}}",
   "author": {
-    "name": "{{{&name}}}",
-    "email": "{{{&email}}}"
+    "name": "{{{git.user.name}}}",
+    "email": "{{{git.user.email}}}"
   },
   "license": "ISC",
   "version": "1.0.0",
@@ -29,7 +29,7 @@
     "chmodx": "^1.0.0",
     "del-cli": "^4.0.1",
     "eslint": "^8.13.0",
-    "eslint-config-rational": "^0.1.6",
+    "eslint-config-rational": "^0.1.7",
     "jest": "^27.5.1",
     "npm-check-updates": "^12.5.9",
     "prettier": "^2.6.2",

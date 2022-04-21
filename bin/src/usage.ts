@@ -2,9 +2,9 @@ const usage = (): void => {
   console.log(
     // eslint-disable-next-line prefer-template
     `
-Usage: {{{&target}}} [options]
-       {{{&target}}} --version
-       {{{&target}}} --help
+Usage: {{{target.basename}}} [options]
+       {{{target.basename}}} --version
+       {{{target.basename}}} --help
 
 {{{Description}}}
 

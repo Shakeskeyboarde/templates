@@ -1,3 +1,3 @@
-# {{{&target}}}
+# {{{target.basename}}}
 
 {{{Description}}}
