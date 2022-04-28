@@ -18,10 +18,11 @@
   "sideEffects": false,
   "scripts": {
     "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache",
-    "prepare": "del-cli lib && tsc && chmodx --package",
+    "prepublishOnly": "npm build",
+    "build": "del-cli lib && tsc && chmodx --package",
     "start": "yon run prepare && node lib/bin.js",
     "clean": "del-cli lib out",
-    "modernize": "npm-check-updates -u -x @types/node && yon i"
+    "modernize": "npm-check-updates -u -x @types/node"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
@@ -29,7 +30,7 @@
     "chmodx": "^1.0.0",
     "del-cli": "^4.0.1",
     "eslint": "^8.13.0",
-    "eslint-config-rational": "^0.1.7",
+    "eslint-config-rational": "^0.1.8",
     "jest": "^27.5.1",
     "npm-check-updates": "^12.5.9",
     "prettier": "^2.6.2",

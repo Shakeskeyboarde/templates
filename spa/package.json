@@ -11,10 +11,11 @@
   "main": "package.json",
   "scripts": {
     "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache",
-    "prepare": "del-cli dist && webpack build",
+    "prepublishOnly": "npm build",
+    "build": "del-cli dist && webpack build",
     "start": "webpack serve",
     "clean": "del-cli dist out",
-    "modernize": "npm-check-updates -u && yon i"
+    "modernize": "npm-check-updates -u"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -33,7 +34,7 @@
     "css-loader": "^6.7.1",
     "del-cli": "^4.0.1",
     "eslint": "^8.13.0",
-    "eslint-config-rational": "^0.1.7",
+    "eslint-config-rational": "^0.1.8",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
@@ -46,8 +47,7 @@
     "webpack": "^5.72.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.8.1",
-    "yarn-or-npm": "^3.0.1"
+    "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
     "core-js": "^3.22.1",

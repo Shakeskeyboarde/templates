@@ -19,9 +19,10 @@
   "sideEffects": false,
   "scripts": {
     "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache",
-    "prepare": "del-cli lib && tsc --project tsconfig.build-commonjs.json && tsc --project tsconfig.build-module.json",
+    "prepublishOnly": "npm build",
+    "build": "del-cli lib && tsc --project tsconfig.build-commonjs.json && tsc --project tsconfig.build-module.json",
     "clean": "del-cli lib out",
-    "modernize": "npm-check-updates -u -x @types/node && yon i"
+    "modernize": "npm-check-updates -u -x @types/node"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -32,12 +33,11 @@
     "@types/node": "^17.0.25",
     "del-cli": "^4.0.1",
     "eslint": "^8.13.0",
-    "eslint-config-rational": "^0.1.7",
+    "eslint-config-rational": "^0.1.8",
     "jest": "^27.5.1",
     "npm-check-updates": "^12.5.9",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3",
-    "yarn-or-npm": "^3.0.1"
+    "typescript": "^4.6.3"
   }
 }
