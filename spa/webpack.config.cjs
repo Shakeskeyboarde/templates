@@ -1,3 +1,4 @@
+const Package = require('./package.json');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -60,7 +61,11 @@ module.exports = (environment, argv) => {
     },
     performance: { hints: false },
     plugins: [
-      new HtmlPlugin({ favicon: './src/favicon.png', template: './src/index.html' }),
+      new HtmlPlugin({
+        favicon: './src/favicon.png',
+        template: './src/index.ejs',
+        title: Package.title || Package.name || 'Webpack App',
+      }),
       new CopyPlugin({ patterns: [{ context: 'public', from: '**', noErrorOnMissing: true }] }),
       new BundleAnalyzerPlugin({
         analyzerMode: isBuild && isProduction ? 'static' : 'disabled',

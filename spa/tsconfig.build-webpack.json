@@ -4,5 +4,6 @@
     "declaration": false,
     "noEmit": false
   },
-  "exclude": ["src/**/*.test.*"]
+  "include": [],
+  "files": ["src/index.tsx"]
 }

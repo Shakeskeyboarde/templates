@@ -3,6 +3,15 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
-import { render } from 'react-dom';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
-render(<div>Hello, World!</div>, document.querySelector('#root'));
+const rootElement = document.body.appendChild(document.createElement('div'));
+const root = createRoot(rootElement);
+
+rootElement.setAttribute('id', 'root');
+root.render(
+  <StrictMode>
+    <div>Hello, World!</div>
+  </StrictMode>,
+);
