@@ -16,7 +16,6 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "declaration": true,
-    "preserveValueImports": true,
     "jsx": "react-jsx",
     "allowJs": true,
     "noEmit": true,

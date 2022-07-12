@@ -2,16 +2,20 @@
 
 TODO: You should delete this file after setting up your project.
 
-This template is pre-configured to work in NodeJS (commonjs) _and_ when bundled into a Webpack application (tree-shakable). Depending on what kind of library you're building, you may want to make some of the following changes.
+_No poly-filling is performed during the library build process!_ When a library is consumed, the consumer must provide its own polyfills if necessary.
 
-## NodeJS only
+This template is pre-configured to build both a NodeJS version (commonjs requires) _and_ a Webpack version (tree-shakable imports).
+
+Depending on what kind of library you're building, you may want to make some of the following changes.
+
+## NodeJS support
 
 - Add "node" to the [tsconfig.json](tsconfig.json) `types` array.
+- Change `"node": false` to `"node": true` in [.eslint.cjs](.eslint.cjs).
 
-## Webpack only (React)
+## Browser support
 
 - Add "DOM" to the [tsconfig.json](tsconfig.json) `lib` array.
-- Add "react" as a dependency.
 
 ## NodeJS ES Modules
 

@@ -1,11 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "ES2020",
-    "importsNotUsedAsValues": "error",
-    "preserveValueImports": true,
     "outDir": "lib/module",
     "noEmit": false
   },
-  "exclude": ["src/**/*.test.*"]
+  "include": [],
+  "files": ["src/index.ts"]
 }

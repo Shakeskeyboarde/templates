@@ -1,11 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "importsNotUsedAsValues": "remove",
-    "preserveValueImports": false,
     "outDir": "lib/commonjs",
-    "noEmit": false
+    "noEmit": false,
+    "module": "commonjs"
   },
-  "exclude": ["src/**/*.test.*"]
+  "include": [],
+  "files": ["src/index.ts"]
 }
