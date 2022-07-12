@@ -17,7 +17,6 @@
     "sourceMap": true,
     "declaration": true,
     "preserveValueImports": true,
-    "importHelpers": true,
     "jsx": "react-jsx",
     "allowJs": true,
     "noEmit": true,
