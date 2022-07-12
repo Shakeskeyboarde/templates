@@ -17,26 +17,26 @@
   "bin": "lib/bin.js",
   "sideEffects": false,
   "scripts": {
-    "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache",
+    "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache --passWithNoTests",
     "prepublishOnly": "npm build",
-    "build": "del-cli lib && tsc && chmodx --package",
-    "start": "yon run prepare && node lib/bin.js",
-    "clean": "del-cli lib out",
-    "modernize": "npm-check-updates -u -x @types/node"
+    "build": "del-cli lib && tsc --project tsconfig.build.json && chmodx --package",
+    "start": "npm run build && node lib/bin.js",
+    "modernize": "npm-check-updates -u"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.1",
-    "@types/node": "^16.11.22",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.3",
     "chmodx": "^1.0.0",
     "del-cli": "^4.0.1",
-    "eslint": "^8.13.0",
-    "eslint-config-rational": "^0.1.8",
-    "jest": "^27.5.1",
-    "npm-check-updates": "^12.5.9",
-    "prettier": "^2.6.2",
+    "eslint": "^8.19.0",
+    "eslint-config-rational": "^0.1.16",
+    "jest": "^28.1.2",
+    "npm-check-updates": "^15.2.6",
+    "prettier": "^2.7.1",
     "source-map-support": "^0.5.21",
-    "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3",
-    "yarn-or-npm": "^3.0.1"
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
   }
 }

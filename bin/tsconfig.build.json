@@ -1,9 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declaration": false,
     "noEmit": false
   },
   "include": ["src/**/*.d.ts"],
-  "files": ["src/index.tsx"]
+  "files": ["src/bin.ts", "src/index.ts"]
 }

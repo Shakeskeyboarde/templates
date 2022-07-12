@@ -4,6 +4,6 @@
     "outDir": "lib/module",
     "noEmit": false
   },
-  "include": [],
+  "include": ["src/**/*.d.ts"],
   "files": ["src/index.ts"]
 }

@@ -13,7 +13,7 @@ module.exports = {
       parserOptions: { sourceType: require('./package.json').type === 'module' ? 'module' : 'script' },
     },
     {
-      extends: ['rational', 'rational/react', 'rational/typescript', 'rational/warn', 'rational/prettier'],
+      extends: ['rational/react', 'rational/typescript', 'rational/prettier'],
       files: ['*.ts', '*.tsx'],
       parserOptions: { project: './tsconfig.json', tsconfigRootDir: __dirname },
     },
