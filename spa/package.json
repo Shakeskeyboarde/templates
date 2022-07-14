@@ -17,7 +17,6 @@
     "modernize": "npm-check-updates -u"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "@testing-library/react": "^13.3.0",

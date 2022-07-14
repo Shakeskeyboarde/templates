@@ -14,11 +14,10 @@
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
     "useDefineForClassFields": true,
+    "jsx": "react-jsx",
+    "noEmit": true,
     "sourceMap": true,
     "declaration": true,
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "noEmit": true,
     "rootDir": "src",
     "outDir": "lib"
   },
