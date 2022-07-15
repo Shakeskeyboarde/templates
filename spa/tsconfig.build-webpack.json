@@ -1,8 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declaration": false,
-    "noEmit": false
+    "noEmit": false,
+    "removeComments": true,
+    "sourceMap": true
   },
   "include": ["src/**/*.d.ts"],
   "files": ["src/index.tsx"]

@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "lib/commonjs",
     "noEmit": false,
-    "module": "commonjs"
+    "removeComments": true,
+    "sourceMap": true,
+    "module": "CommonJS"
   },
   "include": ["src/**/*.d.ts"],
   "files": ["src/index.ts"]

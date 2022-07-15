@@ -1,10 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "lib/module",
+    "outDir": "lib/types",
     "noEmit": false,
-    "removeComments": true,
-    "sourceMap": true
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
   "include": ["src/**/*.d.ts"],
   "files": ["src/index.ts"]

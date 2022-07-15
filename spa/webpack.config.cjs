@@ -91,7 +91,7 @@ module.exports = (environment, argv) => {
       }),
     ],
     resolve: { extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.wasm'] },
-    stats: { all: false, chunks: true, errors: true, warnings: true },
+    stats: { all: false, errors: true, warnings: true },
     target: 'web',
   };
 };

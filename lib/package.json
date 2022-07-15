@@ -12,11 +12,11 @@
   "directories": {
     "lib": "lib"
   },
-  "types": "lib/module/index.d.ts",
+  "types": "lib/types/index.d.ts",
   "module": "lib/module/index.js",
   "main": "lib/commonjs/index.js",
   "exports": {
-    "types": "./lib/module/index.d.ts",
+    "types": "./lib/types/index.d.ts",
     "import": "./lib/module/index.js",
     "default": "./lib/commonjs/index.js"
   },
@@ -24,7 +24,7 @@
   "scripts": {
     "test": "del-cli out && tsc --noEmit && eslint --max-warnings=0 src && jest --no-cache --passWithNoTests",
     "prepublishOnly": "npm build",
-    "build": "del-cli lib && tsc --project tsconfig.build-commonjs.json && tsc --project tsconfig.build-module.json",
+    "build": "del-cli lib && tsc --project tsconfig.build-commonjs.json && tsc --project tsconfig.build-module.json && tsc --project tsconfig.build-types.json",
     "modernize": "npm-check-updates -u"
   },
   "devDependencies": {
