@@ -8,11 +8,15 @@
   },
   "license": "ISC",
   "version": "1.0.0",
-  "types": "lib/commonjs/index.d.ts",
-  "module": "./lib/module/index.js",
+  "files": ["lib/**"],
+  "directories": {
+    "lib": "lib"
+  },
+  "types": "lib/module/index.d.ts",
+  "module": "lib/module/index.js",
   "main": "lib/commonjs/index.js",
   "exports": {
-    "types": "./lib/commonjs/index.d.ts",
+    "types": "./lib/module/index.d.ts",
     "import": "./lib/module/index.js",
     "default": "./lib/commonjs/index.js"
   },

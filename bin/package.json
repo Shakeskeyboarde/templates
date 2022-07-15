@@ -8,6 +8,10 @@
   },
   "license": "ISC",
   "version": "1.0.0",
+  "files": ["lib/**"],
+  "directories": {
+    "lib": "lib"
+  },
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
   "exports": {
