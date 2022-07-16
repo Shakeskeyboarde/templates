@@ -38,7 +38,7 @@ module.exports = (environment, argv) => {
         {
           exclude: [/node_modules/],
           test: /\.tsx?$/i,
-          use: { loader: 'ts-loader', options: { configFile: 'tsconfig.build-webpack.json' } },
+          use: { loader: 'ts-loader', options: { compilerOptions: { noEmit: false }, configFile: 'tsconfig.json' } },
         },
         // Allow CSS for backwards compatibility, but prefer CSS-in-JS for
         // anything complex.
