@@ -17,7 +17,8 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+    "sourceMap": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
