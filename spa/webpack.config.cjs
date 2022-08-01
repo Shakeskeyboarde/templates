@@ -2,6 +2,7 @@ const Package = require('./package.json');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 /** @return {import('webpack').Configuration} */
 module.exports = (environment, argv) => {
@@ -88,6 +89,9 @@ module.exports = (environment, argv) => {
         defaultSizes: 'parsed',
         openAnalyzer: false,
         reportFilename: `${outputRoot}/report.html`,
+      }),
+      new CompressionPlugin({
+        exclude: isBuild && mode === 'production' ? undefined : [/./],
       }),
     ],
     resolve: { extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.wasm'] },
