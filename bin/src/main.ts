@@ -1,4 +1,4 @@
-import { usage } from './usage';
+import { usage } from './usage.js';
 
 const main = async (args = process.argv.slice(2)): Promise<void> => {
   if (args.includes('--help')) {

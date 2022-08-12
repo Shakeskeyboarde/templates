@@ -1,3 +1,3 @@
-import {} from './main';
+import {} from './main.js';
 
 test.todo('write some tests');

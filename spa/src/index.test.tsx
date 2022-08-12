@@ -15,7 +15,7 @@ test('render', async () => {
 
   jest.mocked(createRoot).mockReturnValue({ render } as unknown as Root);
 
-  await import('.');
+  await import('./index.jsx');
 
   expect(document.querySelector('#root')).not.toBeNull();
   expect(render).toHaveBeenCalled();
