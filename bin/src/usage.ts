@@ -1,6 +1,5 @@
 const usage = (): void => {
   console.log(
-    // eslint-disable-next-line prefer-template
     `
 Usage: {{{target.basename}}} [options]
        {{{target.basename}}} --version
@@ -9,8 +8,8 @@ Usage: {{{target.basename}}} [options]
 {{{Description}}}
 
 Options:
-  --version  Display the current version
-  --help     Display this help text
+  -v, --version  Display the current version
+  -h, --help     Display this help text
     `.trim() + '\n',
   );
 };

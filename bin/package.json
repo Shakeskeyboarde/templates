@@ -15,14 +15,6 @@
     "lib": "lib"
   },
   "type": "module",
-  "types": "lib/index.d.ts",
-  "main": "lib/index.js",
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    }
-  },
   "bin": "lib/bin.js",
   "sideEffects": false,
   "scripts": {

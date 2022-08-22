@@ -12,6 +12,3 @@ import('source-map-support/register')
     console.error(isDevelopment ? error : `${error}`);
     process.exitCode = 1;
   });
-
-// Required to tell TS that this is a module.
-export {};
