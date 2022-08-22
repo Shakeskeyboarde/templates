@@ -4,5 +4,5 @@
     "noEmit": false
   },
   "include": ["src/**/*.d.ts"],
-  "files": ["src/bin.ts", "src/index.ts"]
+  "files": ["src/bin.ts"]
 }
