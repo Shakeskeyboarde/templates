@@ -9,8 +9,8 @@ const getOptions = (args: readonly string[]): Options => {
   const options = parseArgs({
     args: [...args],
     options: {
-      help: { short: 'h', type: 'boolean' },
-      version: { short: 'v', type: 'boolean' },
+      help: { type: 'boolean' },
+      version: { type: 'boolean' },
     },
     strict: true,
   });
