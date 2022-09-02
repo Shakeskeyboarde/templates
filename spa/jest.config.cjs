@@ -18,9 +18,9 @@ module.exports = {
     'ts-jest': { useESM: true },
   },
   moduleNameMapper: {
-    // Remove the .js extension (required for ES Module support) from TS file imports.
-    '(.*)\\.jsx?$': '$1',
     '\\.css$': 'identity-obj-proxy',
+    // Remove the .js extension (required for ES Module support) from TS file imports.
+    '^(\\.{1,2}/.*)\\.jsx?$': '$1',
   },
   preset: 'ts-jest',
   restoreMocks: true,
