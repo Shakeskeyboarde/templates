@@ -24,17 +24,17 @@
     "modernize": "npx npm-check-updates -i --format group"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.8",
+    "@types/jest": "^29.0.0",
     "@types/node": "^18.7.16",
     "chmodx": "^1.0.0",
     "del-cli": "^5.0.0",
     "eslint": "^8.23.0",
-    "eslint-config-rational": "^2.0.3",
-    "jest": "^28.1.3",
+    "eslint-config-rational": "^2.0.5",
+    "jest": "^29.0.3",
     "parallel-rc": "^1.0.12",
     "prettier": "^2.7.1",
     "source-map-support": "^0.5.21",
-    "ts-jest": "^28.0.8",
-    "typescript": "^4.8.2"
+    "ts-jest": "^29.0.0",
+    "typescript": "^4.8.3"
   }
 }

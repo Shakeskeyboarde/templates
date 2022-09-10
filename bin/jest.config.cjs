@@ -16,14 +16,11 @@ module.exports = {
   coverageReporters: ['text-summary', 'html-spa', 'lcov'],
   coverageThreshold: { global: { branches: 50, functions: 50, lines: 50, statements: 50 } },
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': { useESM: true },
-  },
   moduleNameMapper: {
     // Remove the .js extension (required for ES Module support) from TS file imports.
     '^(\\.{1,2}/.*)\\.jsx?$': '$1',
   },
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
   restoreMocks: true,
   roots: ['src'],
   setupFilesAfterEnv: [],
