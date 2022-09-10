@@ -5,6 +5,10 @@ module.exports = {
   ignorePatterns: ['node_modules', 'lib', 'out', 'dist'],
   overrides: [
     {
+      files: ['*.cjs'],
+      parserOptions: { sourceType: 'script' },
+    },
+    {
       files: ['*.mjs'],
       parserOptions: { sourceType: 'module' },
     },
@@ -13,9 +17,9 @@ module.exports = {
       parserOptions: { sourceType: require('./package.json').type === 'module' ? 'module' : 'script' },
     },
     {
-      extends: ['rational/react', 'rational/typescript', 'rational/prettier'],
-      files: ['*.ts', '*.tsx'],
-      parserOptions: { project: './tsconfig.json', tsconfigRootDir: __dirname },
+      extends: ['rational/typescript', 'rational/prettier'],
+      files: ['*.ts'],
+      parserOptions: { project: './tsconfig.json' },
     },
   ],
   root: true,
