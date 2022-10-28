@@ -4,13 +4,19 @@ import 'regenerator-runtime/runtime';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createGlobalStyle } from 'styled-components';
 
-const rootElement = document.body.appendChild(document.createElement('div'));
-const root = createRoot(rootElement);
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: #ccc;
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+`;
 
-rootElement.setAttribute('id', 'root');
-root.render(
+createRoot(document.body.appendChild(document.createElement('div'))).render(
   <StrictMode>
+    <GlobalStyle />
     <div>Hello, World!</div>
   </StrictMode>,
 );
