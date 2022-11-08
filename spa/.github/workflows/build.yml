@@ -40,6 +40,8 @@ jobs:
 
       # - name: Publish (NPM)
       #   continue-on-error: true
-      #   run: npm publish --access public --ignore-scripts *.tgz
+      #   run: |
+      #     npm config --location project set //registry.npmjs.org/:_authToken '$NPM_TOKEN'
+      #     npm publish --access public --ignore-scripts *.tgz
       #   env:
       #     NPM_TOKEN: ${{secrets.NPM_TOKEN}}
