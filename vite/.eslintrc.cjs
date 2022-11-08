@@ -23,7 +23,7 @@ module.exports = {
     {
       extends: ['rational/typescript', 'rational/prettier'],
       files: ['*.ts', '*.tsx'],
-      parserOptions: { project: './tsconfig.json' },
+      parserOptions: { project: `${__dirname}/tsconfig.json` },
     },
   ],
   root: true,

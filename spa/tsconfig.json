@@ -3,21 +3,17 @@
   "compilerOptions": {
     "module": "NodeNext",
     "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
-    "types": ["jest"],
-    "strict": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true,
-    "downlevelIteration": true,
-    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [],
     "jsx": "react-jsx",
     "noEmit": true,
-    "rootDir": "src",
-    "outDir": "lib",
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "downlevelIteration": true,
+    "useDefineForClassFields": true,
     "noUncheckedIndexedAccess": true,
-    "sourceMap": true
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

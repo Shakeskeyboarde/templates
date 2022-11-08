@@ -20,11 +20,13 @@ module.exports = {
     // Remove the .js extension (required for ES Module support) from TS file imports.
     '^(\\.{1,2}/.*)\\.jsx?$': '$1',
   },
-  preset: 'ts-jest/presets/default-esm',
   restoreMocks: true,
   roots: ['src'],
   setupFilesAfterEnv: [],
   testEnvironment: 'node',
   testPathIgnorePatterns: ignorePatterns,
+  transform: {
+    '^.+\\.tsx?$': ['ts-jest', { diagnostics: { ignoreCodes: [151001] }, useESM: true }],
+  },
   verbose: true,
 };

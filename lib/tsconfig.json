@@ -4,19 +4,16 @@
     "module": "NodeNext",
     "target": "ES2022",
     "lib": ["ES2022"],
-    "types": ["jest"],
-    "strict": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true,
-    "downlevelIteration": true,
-    "useDefineForClassFields": true,
+    "types": [],
     "jsx": "react-jsx",
     "noEmit": true,
-    "rootDir": "src",
-    "outDir": "lib",
-    "noUncheckedIndexedAccess": true
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "downlevelIteration": true,
+    "useDefineForClassFields": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
