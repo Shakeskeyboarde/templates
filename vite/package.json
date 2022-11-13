@@ -15,8 +15,8 @@
   "main": "package.json",
   "scripts": {
     "test": "del-cli out && rc test",
-    "start": "vite",
-    "preview": "vite preview",
+    "start": "vite --host",
+    "preview": "vite preview --host",
     "prepack": "del-cli dist && vite build",
     "modernize": "npx npm-check-updates -i --format group"
   },
