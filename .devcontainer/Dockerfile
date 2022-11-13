@@ -3,7 +3,7 @@ FROM archlinux:latest
 # Update and install packages
 RUN pacman-key --init && pacman-key --populate archlinux
 RUN pacman -Syu --noconfirm
-RUN pacman -Sy --noconfirm coreutils dnsutils openssh base-devel zsh vim git
+RUN pacman -Sy --noconfirm coreutils base-devel zsh vim git openssh podman podman-docker
 RUN rm -rf /etc/pacman.d/gnupg
 
 # Change the shell to ZSH
