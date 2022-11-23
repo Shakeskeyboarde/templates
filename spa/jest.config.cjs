@@ -23,11 +23,12 @@ module.exports = {
   },
   restoreMocks: true,
   roots: ['src'],
-  setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ignorePatterns,
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', { diagnostics: { ignoreCodes: [151001] }, useESM: true }],
+    '^.+\\.[tj]sx?$': ['ts-jest', { diagnostics: { ignoreCodes: [151001] }, useESM: true }],
   },
+  transformIgnorePatterns: [],
   verbose: true,
 };

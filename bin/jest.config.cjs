@@ -26,7 +26,8 @@ module.exports = {
   testEnvironment: 'node',
   testPathIgnorePatterns: ignorePatterns,
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', { diagnostics: { ignoreCodes: [151001] }, useESM: true }],
+    '^.+\\.[tj]sx?$': ['ts-jest', { diagnostics: { ignoreCodes: [151001] }, useESM: true }],
   },
+  transformIgnorePatterns: [],
   verbose: true,
 };

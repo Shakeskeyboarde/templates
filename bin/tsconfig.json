@@ -5,6 +5,7 @@
     "target": "ES2022",
     "lib": ["ES2022"],
     "types": ["node"],
+    "allowJs": true,
     "jsx": "react-jsx",
     "noEmit": true,
     "strict": true,
