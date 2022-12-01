@@ -4,7 +4,7 @@
     "module": "NodeNext",
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": [],
+    "types": ["jest"],
     "allowJs": true,
     "jsx": "react-jsx",
     "noEmit": true,
@@ -16,5 +16,5 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "jest.setup.ts"]
 }
