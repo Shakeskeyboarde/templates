@@ -32,7 +32,6 @@
     "modernize": "npx npm-check-updates -i --format group"
   },
   "devDependencies": {
-    "@jest/globals": "^29.3.1",
     "@types/jest": "^29.2.3",
     "del-cli": "^5.0.0",
     "eslint": "^8.28.0",

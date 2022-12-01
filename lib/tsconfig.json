@@ -4,7 +4,7 @@
     "module": "NodeNext",
     "target": "ES2022",
     "lib": ["ES2022"],
-    "types": [],
+    "types": ["jest"],
     "allowJs": true,
     "jsx": "react-jsx",
     "noEmit": true,

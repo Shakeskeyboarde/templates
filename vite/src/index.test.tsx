@@ -1,4 +1,3 @@
-import { expect, jest, test } from '@jest/globals';
 import { type PropsWithChildren } from 'react';
 import { type Root } from 'react-dom/client';
 
@@ -12,7 +11,7 @@ test('render', async () => {
   jest.resetModules();
 
   const { createRoot } = await import('react-dom/client');
-  const render = jest.fn<(...args: any[]) => Root['render']>();
+  const render = jest.fn();
 
   jest.mocked(createRoot).mockReturnValue({ render } as unknown as Root);
 
