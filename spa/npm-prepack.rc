@@ -1,0 +1,1 @@
+del-cli dist && webpack build --mode=production

@@ -1,3 +1,0 @@
-tsc --project tsconfig.build-types.json
-tsc --project tsconfig.build-esm.json
-tsc --project tsconfig.build-cjs.json && echo '{ "type": "commonjs" }' > lib/cjs/package.json

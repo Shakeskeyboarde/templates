@@ -1,21 +1,22 @@
 import { type PropsWithChildren } from 'react';
 import { type Root } from 'react-dom/client';
+import { expect, test, vi } from 'vitest';
 
-jest.mock('react', () => ({
-  ...jest.requireActual<any>('react'),
+vi.mock('react', async () => ({
+  ...(await vi.importActual<any>('react')),
   StrictMode: ({ children }: PropsWithChildren) => <div>{children}</div>,
 }));
-jest.mock('react-dom/client', () => ({ createRoot: jest.fn() }));
+vi.mock('react-dom/client', () => ({ createRoot: vi.fn() }));
 
 test('render', async () => {
-  jest.resetModules();
+  vi.resetModules();
 
   const { createRoot } = await import('react-dom/client');
-  const render = jest.fn();
+  const render = vi.fn();
 
-  jest.mocked(createRoot).mockReturnValue({ render } as unknown as Root);
+  vi.mocked(createRoot).mockReturnValue({ render } as unknown as Root);
 
-  await import('./index.jsx');
+  await import('./index.js');
 
   expect(document.querySelector('body > div')).not.toBeNull();
   expect(render).toHaveBeenCalled();
