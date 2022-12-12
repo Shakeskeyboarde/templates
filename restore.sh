@@ -7,5 +7,7 @@ cd "$ROOT/spa"
 npm i
 cd "$ROOT/lib"
 npm i
+cd "$ROOT/lib-vite"
+npm i
 cd "$ROOT/bin"
 npm i
