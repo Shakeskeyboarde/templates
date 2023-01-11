@@ -6,5 +6,5 @@
     "outDir": "lib"
   },
   "include": ["src/**/*.d.ts"],
-  "files": ["src/bin.ts"]
+  "files": ["src/main.ts"]
 }
