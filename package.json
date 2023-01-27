@@ -1,0 +1,11 @@
+{
+  "name": "templates",
+  "private": true,
+  "workspaces": [
+    "bin",
+    "lib",
+    "lib-vite",
+    "spa",
+    "vite"
+  ]
+}
