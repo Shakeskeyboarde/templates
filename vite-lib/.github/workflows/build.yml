@@ -25,11 +25,11 @@ jobs:
       - name: Restore
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
       - name: Test
         run: npm test
-
-      - name: Pack
-        run: npm pack
 
       # - name: Publish (CodeCov)
       #   if: github.ref == 'refs/heads/main'
@@ -63,4 +63,4 @@ jobs:
         with:
           name: workspace
           path: workspace.tar
-          retention-days: 7
+          retention-days: 1
