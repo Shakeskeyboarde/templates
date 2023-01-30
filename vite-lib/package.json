@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@templates/bin",
+  "name": "@templates/vite-lib",
   "description": "{{{Description}}}",
   "author": "{{{git.user.name}}} <{{{git.user.email}}}>",
   "license": "ISC",
@@ -12,13 +12,22 @@
     "lib": "lib"
   },
   "type": "module",
-  "bin": "lib/main.js",
+  "types": "lib/esm/index.d.ts",
+  "module": "lib/esm/index.js",
+  "main": "lib/cjs/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/cjs/index.js"
+    }
+  },
   "sideEffects": false,
   "scripts": {
-    "test": "del-cli out && tsc && eslint --max-warnings=0 src --ignore-pattern '__*' && jest --no-cache --passWithNoTests",
-    "build": "del-cli lib && tsc -b tsconfig.build.json && chmodx --package",
+    "test": "del-cli out && tsc && eslint --max-warnings=0 src --ignore-pattern '__*' && vitest run --reporter=verbose --coverage --passWithNoTests",
+    "build": "del-cli lib && tsc -b tsconfig.build.json && echo '{ \"type\": \"commonjs\" }' > lib/cjs/package.json",
     "modernize": "npx npm-check-updates@latest -i --format group",
-    "start": "npm run prepack && node lib/main.js"
+    "start": "vite --host"
   },
   "prettier": {
     "singleQuote": true,
@@ -66,11 +75,13 @@
       },
       {
         "extends": [
+          "rational/react",
           "rational/typescript",
           "rational/prettier"
         ],
         "files": [
-          "*.ts"
+          "*.ts",
+          "*.tsx"
         ],
         "parserOptions": {
           "project": "./tsconfig.json"
@@ -79,16 +90,28 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.11.18",
-    "chmodx": "^1.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^3.0.1",
+    "@vitest/coverage-c8": "^0.28.3",
     "del-cli": "^5.0.0",
     "eslint": "^8.33.0",
     "eslint-config-rational": "^2.0.9",
-    "jest": "^29.4.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jsdom": "^21.1.0",
+    "normalize.css": "^8.0.1",
     "parallel-rc": "^1.0.12",
     "prettier": "^2.8.3",
-    "ts-jest": "^29.0.5",
-    "typescript": "^4.9.5"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "typescript": "^4.9.5",
+    "vite": "^4.0.4",
+    "vite-plugin-full-reload": "^1.0.5",
+    "vitest": "^0.28.3"
   }
 }

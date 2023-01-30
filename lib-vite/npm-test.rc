@@ -1,3 +1,0 @@
-tsc --noEmit
-eslint --max-warnings=0 src --ignore-pattern "__*"
-del-cli out/coverage && vitest run --reporter=verbose --coverage --passWithNoTests

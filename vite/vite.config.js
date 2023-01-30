@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [reload('**'), react()],
   server: { hmr: false },
+  build: { sourcemap: true },
   test: {
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],

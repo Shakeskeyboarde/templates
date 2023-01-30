@@ -1,11 +1,8 @@
 {
   "private": true,
-  "name": "~~~target.basename~~~",
+  "name": "@templates/vite",
   "description": "{{{Description}}}",
-  "author": {
-    "name": "{{{git.user.name}}}",
-    "email": "{{{git.user.email}}}"
-  },
+  "author": "{{{git.user.name}}} <{{{git.user.email}}}>",
   "license": "ISC",
   "version": "1.0.0",
   "files": [
@@ -14,11 +11,70 @@
   "type": "module",
   "main": "package.json",
   "scripts": {
-    "test": "rc npm-test -o",
-    "start": "vite --host",
-    "preview": "vite preview --host",
-    "prepack": "del-cli *.tgz && rc npm-prepack",
-    "modernize": "npx npm-check-updates@latest -i --format group"
+    "test": "del-cli out && tsc && eslint --max-warnings=0 src --ignore-pattern '__*' && vitest run --reporter=verbose --coverage --passWithNoTests",
+    "build": "del-cli dist && vite build",
+    "modernize": "npx npm-check-updates@latest -i --format group",
+    "start": "vite --host"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "trailingComma": "all",
+    "endOfLine": "lf"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "rational",
+      "rational/warn",
+      "rational/prettier"
+    ],
+    "ignorePatterns": [
+      "node_modules",
+      "lib",
+      "out",
+      "dist",
+      "*.config.js",
+      "*.config.cjs",
+      "*rc.js",
+      "*rc.cjs"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.cjs"
+        ],
+        "parserOptions": {
+          "sourceType": "script"
+        }
+      },
+      {
+        "files": [
+          "*.js",
+          "*.mjs"
+        ],
+        "parserOptions": {
+          "sourceType": "module"
+        }
+      },
+      {
+        "extends": [
+          "rational/react",
+          "rational/typescript",
+          "rational/prettier"
+        ],
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.json"
+        }
+      }
+    ]
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -30,13 +86,13 @@
     "@vitejs/plugin-react": "^3.0.1",
     "@vitest/coverage-c8": "^0.28.3",
     "del-cli": "^5.0.0",
-    "eslint": "^8.32.0",
+    "eslint": "^8.33.0",
     "eslint-config-rational": "^2.0.9",
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^21.1.0",
     "parallel-rc": "^1.0.12",
     "prettier": "^2.8.3",
-    "typescript": "^4.9.4",
+    "typescript": "^4.9.5",
     "vite": "^4.0.4",
     "vite-plugin-full-reload": "^1.0.5",
     "vitest": "^0.28.3"

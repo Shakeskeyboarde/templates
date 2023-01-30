@@ -4,8 +4,11 @@
   "workspaces": [
     "bin",
     "lib",
-    "lib-vite",
-    "spa",
-    "vite"
-  ]
+    "vite",
+    "vite-lib"
+  ],
+  "scripts": {
+    "test": "npm -ws --if-present test && npm -ws --if-present run build",
+    "modernize": "npx npm-check-updates@latest -i --format group -ws --root --peer"
+  }
 }
